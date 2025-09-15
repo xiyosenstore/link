@@ -702,10 +702,10 @@
                 class="flex justify-center border-b border-gray-700 mb-6 gap-2 sm:gap-4"
               >
                 <button
-                  class="tab py-3 px-4 font-medium text-sm focus:outline-none"
+                  class="tab active py-3 px-4 font-medium text-sm focus:outline-none"
                   data-target="vless-form"
                 >
-                  <i class="fas fa-bolt mr-2"></i>VLESS
+                  <i class="fas fa-shield-alt mr-2"></i>Vless
                 </button>
                 <button
                   class="tab py-3 px-4 font-medium text-sm focus:outline-none"
@@ -719,122 +719,16 @@
                 >
                   <i class="fas fa-mask mr-2"></i>SS
                 </button>
+                              <button
+                  class="tab py-3 px-4 font-medium text-sm focus:outline-none"
+                  data-target="vmess-form"
+                >
+                  <i class="fas fa-bolt mr-2"></i>VMESS(OF)
+                </button>
               </div>
 
-              <!-- VMess Form -->
-              <div id="vmess-form" class="protocol-form">
-                <form id="vmess-account-form" class="space-y-5">
-                  <div>
-                    <label
-                      for="vmess-name"
-                      class="block text-sm font-medium text-gray-300 mb-2"
-                      >Account Name</label
-                    >
-                    <input
-                      type="text"
-                      id="vmess-name"
-                      name="name"
-                      class="w-full px-4 py-2.5 input rounded-lg text-sm"
-                      readonly
-                    />
-                  </div>
-
-                  <div>
-                    <label
-                      for="vmess-uuid"
-                      class="block text-sm font-medium text-gray-300 mb-2"
-                      >UUID</label
-                    >
-                    <div class="flex">
-                      <input
-                        type="text"
-                        id="vmess-uuid"
-                        name="uuid"
-                        class="flex-1 px-4 py-2.5 input rounded-l-lg text-sm"
-                        value="3cdadfe3-c35d-4722-ba0a-d724b871bad4"
-                        required
-                      />
-                      <button
-                        type="button"
-                        onclick="generateUUID('vmess-uuid')"
-                        class="btn-secondary px-4 py-2.5 rounded-r-lg hover:bg-slate-700"
-                      >
-                        <i class="fas fa-sync-alt"></i>
-                      </button>
-                    </div>
-                  </div>
-
-                  <div>
-                    <label
-                      for="vmess-path"
-                      class="block text-sm font-medium text-gray-300 mb-2"
-                      >Path</label
-                    >
-                    <input
-                      type="text"
-                      id="vmess-path"
-                      name="path"
-                      class="w-full px-4 py-2.5 input rounded-lg text-sm"
-                      readonly
-                    />
-                  </div>
-
-                  <div>
-                    <label
-                      for="vmess-security"
-                      class="block text-sm font-medium text-gray-300 mb-2"
-                      >TLS</label
-                    >
-                    <select
-                      id="vmess-security"
-                      name="security"
-                      class="w-full px-4 py-2.5 select rounded-lg text-sm"
-                    >
-                      <option value="tls">TLS</option>
-                      <option value="none">NonTLS</option>
-                    </select>
-                    <input
-                      type="hidden"
-                      id="vmess-encryption"
-                      name="encryption"
-                      value="zero"
-                    />
-                  </div>
-
-                  <div>
-                    <label
-                      for="vmess-server-domain"
-                      class="block text-sm font-medium text-gray-300 mb-2"
-                      >Server Domain</label
-                    >
-                    <select
-                      id="vmess-server-domain"
-                      name="server-domain"
-                      class="w-full px-4 py-2.5 select rounded-lg text-sm"
-                    >
-                      <!-- Options will be populated dynamically -->
-                    </select>
-                  </div>
-
-                  <div>
-                    <label
-                      for="vmess-bug"
-                      class="block text-sm font-medium text-gray-300 mb-2"
-                      >Custom Bug
-                      <span class="text-xs text-gray-500"
-                        >(opsional)</span
-                      ></label
-                    >
-                    <input
-                      type="text"
-                      id="vmess-bug"
-                      name="bug"
-                      class="w-full px-4 py-2.5 input rounded-lg text-sm"
-                      placeholder="e.g. bug.com"
-                    />    
-
-              <!-- VLESS Form -->
-              <div id="vless-form" class="protocol-form hidden">
+              <!-- Vless Form -->
+              <div id="vless-form" class="protocol-form">
                 <form id="vless-account-form" class="space-y-5">
                   <div>
                     <label
@@ -903,13 +797,13 @@
                       class="w-full px-4 py-2.5 select rounded-lg text-sm"
                     >
                       <option value="tls">TLS</option>
-                      <option value="none">None</option>
+                      <option value="none">NonTLS</option>
                     </select>
                     <input
                       type="hidden"
                       id="vless-encryption"
                       name="encryption"
-                      value="none"
+                      value="zero"
                     />
                   </div>
 
@@ -955,7 +849,7 @@
                           name="wildcard"
                         />
                         <label for="vless-wildcard"
-                          >Wildcard (Gunakan domain balckwolf)</label
+                          >Wildcard (gunakan domain balckwolf.dpdns.org)</label
                         >
                       </div>
                     </div>
@@ -966,13 +860,12 @@
                       type="submit"
                       class="w-full btn-primary py-3 px-4 rounded-lg flex items-center justify-center"
                     >
-                      <i class="fas fa-plus-circle mr-2"></i> Create VLESS
+                      <i class="fas fa-plus-circle mr-2"></i> Create Vless
                       Account
                     </button>
                   </div>
                 </form>
               </div>
-
               <!-- Trojan Form -->
               <div id="trojan-form" class="protocol-form hidden">
                 <form id="trojan-account-form" class="space-y-5">
@@ -1095,7 +988,7 @@
                           name="wildcard"
                         />
                         <label for="trojan-wildcard"
-                          >Wildcard (Gunakan domain balckwolf)</label
+                          >Wildcard (gunakan domain balckwolf.dpdns.org)</label
                         >
                       </div>
                     </div>
@@ -1226,7 +1119,7 @@
                           name="wildcard"
                         />
                         <label for="ss-wildcard"
-                          >Wildcard (Gunakan domain balckwolf)</label
+                          >Wildcard (gunakan domain balckwolf.dpdns.org)</label
                         >
                       </div>
                     </div>
@@ -1245,6 +1138,146 @@
               </div>
             </div>
           </div>
+                        <!-- VMESS Form -->
+              <div id="vmess-form" class="protocol-form hidden">
+                <form id="vmess-account-form" class="space-y-5">
+                  <div>
+                    <label
+                      for="vmess-name"
+                      class="block text-sm font-medium text-gray-300 mb-2"
+                      >Account Name</label
+                    >
+                    <input
+                      type="text"
+                      id="vmess-name"
+                      name="name"
+                      class="w-full px-4 py-2.5 input rounded-lg text-sm"
+                      readonly
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      for="vmess-uuid"
+                      class="block text-sm font-medium text-gray-300 mb-2"
+                      >UUID</label
+                    >
+                    <div class="flex">
+                      <input
+                        type="text"
+                        id="vmess-uuid"
+                        name="uuid"
+                        class="flex-1 px-4 py-2.5 input rounded-l-lg text-sm"
+                        value="3cdadfe3-c35d-4722-ba0a-d724b871bad4"
+                        required
+                      />
+                      <button
+                        type="button"
+                        onclick="generateUUID('vmess-uuid')"
+                        class="btn-secondary px-4 py-2.5 rounded-r-lg hover:bg-slate-700"
+                      >
+                        <i class="fas fa-sync-alt"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label
+                      for="vless-path"
+                      class="block text-sm font-medium text-gray-300 mb-2"
+                      >Path</label
+                    >
+                    <input
+                      type="text"
+                      id="vmess-path"
+                      name="path"
+                      class="w-full px-4 py-2.5 input rounded-lg text-sm"
+                      readonly
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      for="vmess-security"
+                      class="block text-sm font-medium text-gray-300 mb-2"
+                      >TLS</label
+                    >
+                    <select
+                      id="vmess-security"
+                      name="security"
+                      class="w-full px-4 py-2.5 select rounded-lg text-sm"
+                    >
+                      <option value="tls">TLS</option>
+                      <option value="none">None</option>
+                    </select>
+                    <input
+                      type="hidden"
+                      id="vless-encryption"
+                      name="encryption"
+                      value="none"
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      for="vmess-server-domain"
+                      class="block text-sm font-medium text-gray-300 mb-2"
+                      >Server Domain</label
+                    >
+                    <select
+                      id="vmess-server-domain"
+                      name="server-domain"
+                      class="w-full px-4 py-2.5 select rounded-lg text-sm"
+                    >
+                      <!-- Options will be populated dynamically -->
+                    </select>
+                  </div>
+
+                  <div>
+                    <label
+                      for="vmess-bug"
+                      class="block text-sm font-medium text-gray-300 mb-2"
+                      >Custom Bug
+                      <span class="text-xs text-gray-500"
+                        >(opsional)</span
+                      ></label
+                    >
+                    <input
+                      type="text"
+                      id="vmess-bug"
+                      name="bug"
+                      class="w-full px-4 py-2.5 input rounded-lg text-sm"
+                      placeholder="e.g. bug.com"
+                    />
+                    <div
+                      id="vmess-wildcard-container"
+                      class="wildcard-container"
+                    >
+                      <div class="checkbox-container">
+                        <input
+                          type="checkbox"
+                          id="vmess-wildcard"
+                          name="wildcard"
+                        />
+                        <label for="vmess-wildcard"
+                          >Wildcard (gunakan domain balckwolf.dpdns.org)</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="pt-2">
+                    <button
+                      type="submit"
+                      class="w-full btn-primary py-3 px-4 rounded-lg flex items-center justify-center"
+                    >
+                      <i class="fas fa-plus-circle mr-2"></i> Create VMESS
+                      Account
+                    </button>
+                  </div>
+                </form>
+              </div>
+
 
           <!-- Result Section -->
           <div id="result-section" class="mt-6 hidden">
@@ -1334,6 +1367,7 @@
               >
             </div>
             
+        
             <div class="flex gap-4">
       <span><a href="https://sub.benxx.dpdns.org" target="_blank" rel="noopener noreferrer" style="font-family: 'Rajdhani', sans-serif;"><img src="https://raw.githubusercontent.com/xiyosenstore/link/main/sub1.png" alt="menu" width="30"></a></span>
              <span><a href="https://t.me/Bleszh" target="_blank" rel="noopener noreferrer" style="font-family: 'Rajdhani', sans-serif;"><img src="https://bmkg.xyz/img/tele.png" alt="menu" width="30"></a></span>
@@ -1342,7 +1376,6 @@
               </a>
             </div>
           </div>
-
           <div
             class="h-px bg-gradient-to-r from-transparent via-slate-600/20 to-transparent my-5"
           ></div>
@@ -1384,7 +1417,7 @@
       let proxyList = [];
       let filteredProxyList = [];
       let selectedProxy = null;
-      const defaultProxyUrl = "https://raw.githubusercontent.com/xiyosenstore/hompage/refs/heads/main/ProxyList%20(1)%20(1).txt";
+const defaultProxyUrl = "https://raw.githubusercontent.com/xiyosenstore/hompage/refs/heads/main/ProxyList%20(1)%20(1).txt";
       const serverDomains = ["blackshadow.dpdns.org", "balckwolf.dpdns.org"];
       let selectedServerDomain = serverDomains[0]; // Default to first domain
       const defaultUUID = "2bcfbfba-b446-4ad5-93ad-72af9e008f61";
