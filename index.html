@@ -2291,7 +2291,7 @@ function checkProxyStatusInList(proxy, statusBadge) {
 
         // Update form fields
         const accountName = `${selectedProxy.country} - ${selectedProxy.provider}`;
-        const path = `/Benxx-Project/${selectedProxy.ip}-${selectedProxy.port}`;
+        const path = `/${selectedProxy.ip}-${selectedProxy.port}`;
 
         document.getElementById("vmess-name").value = accountName;
         document.getElementById("vless-name").value = accountName;
